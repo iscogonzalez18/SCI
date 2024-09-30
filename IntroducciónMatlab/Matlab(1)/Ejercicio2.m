@@ -2,10 +2,11 @@ fprintf("Puesto 10 Laboratorio\n")
 fprintf("EJERCICIO 2 Matrices y Vectores\n")
 
 fprintf("1\n")
-dimension = input("Inserte la dimensión de la matriz cuadrada\n");
+dimension = input("Indique el tamaño de la matriz\n");
 
 fprintf("2\n")
 fprintf("a\n")
+% matriz dimensionXdimension rellenada con valores aleatorios del 1 al 10
 A = randi([1, 10], dimension, dimension)
 
 fprintf("b\n")
@@ -22,8 +23,18 @@ minimos = min(transpose(A))
 media = mean(transpose(A))
 varianza = var(transpose(A))
 
+figure;
 hold on
-plot(1:dimension, maximos)
-plot(minimos)
-plot(media)
-plot(varianza)
+plot(maximos, 'DisplayName', 'Máximos');
+plot(minimos, 'DisplayName', 'Mínimos');
+plot(media, 'DisplayName', 'Media');
+plot(varianza, 'DisplayName', 'Varianza');
+xticks(1:dimension)
+
+xlabel('Fila');
+ylabel('Valor')
+title('Análisis de datos')
+legend('show')
+grid on;
+
+hold off;
