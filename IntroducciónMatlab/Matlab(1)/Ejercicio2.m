@@ -1,27 +1,28 @@
 fprintf("Puesto 10 Laboratorio\n")
 fprintf("EJERCICIO 2 Matrices y Vectores\n")
 
-fprintf("1\n")
-dimension = input("Indique el tamaño de la matriz\n");
-
-fprintf("2\n")
-fprintf("a\n")
+fprintf("1)\n")
+dimension = input("Indique el tamaño de la matriz ");
 % matriz dimensionXdimension rellenada con valores aleatorios del 1 al 10
-A = randi([1, 10], dimension, dimension)
+A = randi([1, 10], dimension, dimension);
 
-fprintf("b\n")
-% se coje todas las filas y de las columnas se empieza por la primera y se
-% itera de dos en dos hasta el final
+fprintf("\n2)\n")
+fprintf("Apartado a\n")
+disp(A);
+
+fprintf("Apartado b\n")
+% se cogen todas las filas 
+% de las columnas se empieza por la primera y se itera de dos en dos hasta el final
 B = A(:,1:2:end)
 
-fprintf("c\n")
+fprintf("Apartado c\n")
 C = diag(A)
 
-fprintf("d\n")
-maximos = max(transpose(A))
-minimos = min(transpose(A))
-media = mean(transpose(A))
-varianza = var(transpose(A))
+fprintf("Apartado d\n")
+maximos = max(A')
+minimos = min(A')
+media = mean(A')
+varianza = var(A')
 
 figure;
 hold on

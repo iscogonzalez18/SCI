@@ -9,7 +9,8 @@ fprintf("2\n")
 B = [A v]   % concatenación
 
 fprintf("3\n")
-c = B(1,:)  % primera fila
+vector_fila = B' % transpuesta de B
+vector_fila = vector_fila(:)'  % '(:)' transforma columnas de matriz a vector columna, y transpone (se convierte en fila)
 
 fprintf("4\n")
-d = B(:, 1) % primera columna
+vector_columna = B(:) % transforma columnas de matriz a vector columna
