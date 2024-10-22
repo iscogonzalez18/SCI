@@ -4,9 +4,9 @@ Ts=100e-3
 refx=2.0; 
 refy=2.0;
 % Ejecutar Simulacion
-sim('PositionControl.slx')
+sim('PositionControlNet.slx')
 
-% Generar N posiciones aleatorias, simular y guardar en variables
+% % Generar N posiciones aleatorias, simular y guardar en variables
 % N=30
 % E_d_vec=[];
 % E_theta_vec=[];
@@ -24,9 +24,17 @@ sim('PositionControl.slx')
 % inputs=[E_d_vec'; E_theta_vec'];
 % outputs=[V_vec'; W_vec'];
 
+% % Entrenar red neuronal con 12 neuronas en la capa oculta
+% net = feedforwardnet([12]);
+% net = configure(net,inputs,outputs);
+% net = train(net,inputs,outputs);
+% 
+% % Generar bloque de Simulink con el controlador neuronal
+% gensim(net,Ts)
+
 % Mostrar
-x=out_x.signals.values;
-y=out_y.signals.values;
+x=out_x_net.signals.values;
+y=out_y_net.signals.values;
 figure;
 plot(x,y);
 title('Representación de Movimiento');
