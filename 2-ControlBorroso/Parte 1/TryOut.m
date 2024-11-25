@@ -10,5 +10,7 @@ x=salida_x.signals.values;
 y=salida_y.signals.values;
 figure;
 plot(x,y);
+hold on;
+plot(refx,refy,'ro');
 grid on;
 hold on; 
