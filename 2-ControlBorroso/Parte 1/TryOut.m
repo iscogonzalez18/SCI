@@ -4,7 +4,7 @@ Ts=100e-3
 refx=10*rand-5;
 refy=10*rand-5;
 % Ejecutar Simulacion
-sim('PositionControl.slx')
+sim('PositionControl_c.slx')
 % Mostrar
 x=salida_x.signals.values;
 y=salida_y.signals.values;
