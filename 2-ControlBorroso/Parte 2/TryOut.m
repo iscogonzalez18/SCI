@@ -3,10 +3,13 @@ Ts=100e-3
 % Referencia x-y de posicion
 refx=5; 
 refy=5;
-obsx=2.5; 
-obsy=2;
+% x_0=0.02;
+% y_0=0.02;
+% th_0=0;
+obsx=2; 
+obsy=0.5;
 % Ejecutar Simulacion
-sim('PositionControlObstacle.slx')
+sim('EvitarObstaculo.slx')
 % Mostrar
 x=salida_x.signals.values;
 y=salida_y.signals.values;
