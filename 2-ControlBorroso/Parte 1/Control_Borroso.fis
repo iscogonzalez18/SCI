@@ -1,10 +1,10 @@
 [System]
-Name='Control_Borroso'
+Name='Control_Borroso_c'
 Type='mamdani'
 Version=2.0
 NumInputs=2
 NumOutputs=2
-NumRules=12
+NumRules=15
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -14,47 +14,53 @@ DefuzzMethod='centroid'
 [Input1]
 Name='E_d'
 Range=[0 15]
-NumMFs=4
-MF1='PEQUEÑA':'trimf',[2.39378646934461 3.69778646934461 5.37778646934461]
-MF2='MEDIA':'trimf',[4.96657505285412 6.70657505285412 8.51457505285412]
-MF3='GRANDE':'trimf',[7.75518604651163 11.7541860465116 21.7541860465116]
-MF4='MUY_PEQUEÑA':'trimf',[0 0 3]
+NumMFs=3
+MF1='CERCA':'trimf',[0 0 5]
+MF2='MEDIA':'trimf',[3 7.5 12]
+MF3='LEJOS':'trimf',[10 15 15]
 
 [Input2]
 Name='E_theta'
 Range=[-3.14159265358979 3.14159265358979]
-NumMFs=3
-MF1='NEGATIVO':'trapmf',[-3.142 -3.142 -0.3 0]
+NumMFs=5
+MF1='NEG_GRANDE':'trapmf',[-3.142 -3.142 -3.142 -1.57]
 MF2='CERO':'trimf',[-0.3 0 0.3]
-MF3='POSITIVO':'trapmf',[0 0.3 3.142 3.142]
+MF3='POS_GRANDE':'trapmf',[1.57 3.142 3.142 3.142]
+MF4='NEG_PEQ':'trimf',[-2 -0.5 0]
+MF5='POS_PEQ':'trimf',[0 0.5 2]
 
 [Output1]
 Name='V'
 Range=[0 2]
 NumMFs=4
-MF1='BAJA':'trimf',[0.1 0.18 0.25]
-MF2='MEDIA':'trimf',[0.154334038054968 1 1.5]
-MF3='ALTA':'trimf',[1.05 2.05 2.05]
-MF4='MUY BAJA':'trapmf',[0 0 0 0.1]
+MF1='MUY_BAJA':'trimf',[0 0 0.5]
+MF2='BAJA':'trimf',[0.25 0.75 1.25]
+MF3='ALTA':'trimf',[1.5 2 2]
+MF4='MEDIA':'trimf',[0.75 1.25 1.75]
 
 [Output2]
 Name='W'
 Range=[-1 1]
-NumMFs=3
-MF1='NEGATIVO':'trapmf',[-1 -1 -0.1 0]
-MF2='CERO':'trimf',[-0.1 0 0.1]
-MF3='POSITIVO':'trapmf',[0 0.1 1 1]
+NumMFs=5
+MF1='IZQ_GRANDE':'trapmf',[-1 -1 -0.8 -0.6]
+MF2='CERO':'trimf',[-0.15 0 0.15]
+MF3='DER_GRANDE':'trapmf',[0.6 0.8 1 1]
+MF4='IZQ_PEQ':'trimf',[-0.8 -0.4 0]
+MF5='DER_PEQ':'trimf',[0 0.4 0.8]
 
 [Rules]
 1 1, 1 1 (1) : 1
+1 4, 1 4 (1) : 1
 1 2, 1 2 (1) : 1
+1 5, 1 5 (1) : 1
 1 3, 1 3 (1) : 1
 2 1, 2 1 (1) : 1
-2 2, 2 2 (1) : 1
+2 4, 2 4 (1) : 1
+2 2, 4 2 (1) : 1
+2 5, 2 5 (1) : 1
 2 3, 2 3 (1) : 1
 3 1, 3 1 (1) : 1
+3 4, 3 4 (1) : 1
 3 2, 3 2 (1) : 1
+3 5, 3 5 (1) : 1
 3 3, 3 3 (1) : 1
-4 1, 4 1 (1) : 1
-4 2, 4 2 (1) : 1
-4 3, 4 3 (1) : 1
