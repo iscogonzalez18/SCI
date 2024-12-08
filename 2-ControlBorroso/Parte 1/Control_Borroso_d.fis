@@ -1,0 +1,58 @@
+[System]
+Name='Control_Borroso_d'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=8
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='E_d'
+Range=[0 15]
+NumMFs=4
+MF1='MUY_CERCA':'trimf',[-3 0 3]
+MF3='MEDIA':'trimf',[3 6 9]
+MF2='CERCA':'trimf',[0 3 6]
+MF4='LEJOS':'trapmf',[6 9 15 15]
+
+[Input2]
+Name='E_theta'
+Range=[-3.142 3.142]
+NumMFs=4
+MF1='NEG_GRANDE':'trapmf',[-3.142 -3.142 -1.995 -0.9975]
+MF2='POS_GRANDE':'trapmf',[0.9975 1.995 3.142 3.142]
+MF3='NEG_PEQ':'trimf',[-1.995 -0.9975 0.09975]
+MF4='POS_PEQ':'trimf',[-0.09975 0.9975 1.995]
+
+[Output1]
+Name='V'
+Range=[0 2]
+NumMFs=4
+MF1='MUY_BAJA':'trimf',[-0.6 0 0.6]
+MF2='MEDIA':'trimf',[0.75 1.25 1.75]
+MF3='BAJA':'trimf',[0.25 0.75 1.25]
+MF4='ALTA':'trimf',[1.5 2 2]
+
+[Output2]
+Name='W'
+Range=[-1 1]
+NumMFs=4
+MF1='IZQ_GRANDE':'trapmf',[-3.142 -3.142 -0.8 -0.4]
+MF2='DER_GRANDE':'trapmf',[0.4 0.8 3.142 3.142]
+MF3='IZQ_PEQ':'trimf',[-0.8 -0.4 0.01]
+MF4='DER_PEQ':'trimf',[-0.01 0.4 0.8]
+
+[Rules]
+1 0, 1 0 (1) : 1
+3 0, 3 0 (1) : 1
+2 0, 2 0 (1) : 1
+4 0, 4 0 (1) : 1
+0 1, 0 1 (1) : 1
+0 3, 0 3 (1) : 1
+0 4, 0 4 (1) : 1
+0 2, 0 2 (1) : 1
