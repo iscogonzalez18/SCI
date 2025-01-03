@@ -1,0 +1,68 @@
+[System]
+Name='parte1'
+Type='mamdani'
+Version=2.0
+NumInputs=5
+NumOutputs=2
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='sonar_0'
+Range=[0 5]
+NumMFs=2
+MF1='CERCA':'trapmf',[-1.872 -0.208 2 4]
+MF2='LEJOS':'trapmf',[2 4 7 8]
+
+[Input2]
+Name='sonar_8'
+Range=[0 5]
+NumMFs=2
+MF1='CERCA':'trapmf',[-1.87 -0.208 1.25 5]
+MF2='LEJOS':'trapmf',[1.25 5 7 8]
+
+[Input3]
+Name='sonar_9'
+Range=[0 5]
+NumMFs=2
+MF1='CERCA':'trapmf',[-1.4 -0.208 2 5]
+MF2='LEJOS':'trapmf',[2 5 7 8]
+
+[Input4]
+Name='sonar_10'
+Range=[0 5]
+NumMFs=2
+MF1='CERCA':'trapmf',[-1.70738 -0.0403755 1.6 2]
+MF2='LEJOS':'trapmf',[1.94683908045977 3.61383908045977 5.102969348659 5.69683908045977]
+
+[Input5]
+Name='sonar_11'
+Range=[0 5]
+NumMFs=2
+MF1='CERCA':'trapmf',[-1.872 -0.208 2 4]
+MF2='LEJOS':'trapmf',[2 4 7 8]
+
+[Output1]
+Name='steering_wheel'
+Range=[-90 90]
+NumMFs=5
+MF1='G_FUERTE_IZQ':'trapmf',[-92.0752427184466 -92.0752427184466 -73.5 -61.5]
+MF2='G_LEVE_IZQ':'trimf',[-75 -60 -45]
+MF3='RECTO':'trimf',[-10 0 10]
+MF4='G_LEVE_DER':'trimf',[45 60 75]
+MF5='G_FUERTE_DER':'trapmf',[61.5 73.5 90 90]
+
+[Output2]
+Name='linear_vel_kmh'
+Range=[-30 0]
+NumMFs=2
+MF1='LENTA':'trimf',[-9.8043893129771 -4.7662213740458 -0.644083969465651]
+MF2='PARADA':'trimf',[-1 0 0]
+
+[Rules]
+0 2 2 1 0, 3 1 (1) : 1
+0 2 2 2 0, 5 2 (1) : 1
