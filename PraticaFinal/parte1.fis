@@ -48,13 +48,14 @@ MF2='LEJOS':'trapmf',[2 4 7 8]
 
 [Output1]
 Name='steering_wheel'
-Range=[-90 90]
-NumMFs=5
+Range=[-91 91]
+NumMFs=6
 MF1='G_FUERTE_IZQ':'trapmf',[-92.0752427184466 -92.0752427184466 -73.5 -61.5]
 MF2='G_LEVE_IZQ':'trimf',[-75 -60 -45]
 MF3='RECTO':'trimf',[-10 0 10]
 MF4='G_LEVE_DER':'trimf',[45 60 75]
 MF5='G_FUERTE_DER':'trapmf',[61.5 73.5 90 90]
+MF6='prueba':'trimf',[89 90 91]
 
 [Output2]
 Name='linear_vel_kmh'
@@ -64,5 +65,5 @@ MF1='LENTA':'trimf',[-9.8043893129771 -4.7662213740458 -0.644083969465651]
 MF2='PARADA':'trimf',[-1 0 0]
 
 [Rules]
-0 2 2 1 0, 3 1 (1) : 1
-0 2 2 2 0, 5 2 (1) : 1
+0 0 0 1 0, 3 2 (1) : 1
+0 0 0 2 0, 6 2 (1) : 1
