@@ -55,7 +55,7 @@ MF2='G_LEVE_IZQ':'trimf',[-75 -60 -45]
 MF3='RECTO':'trimf',[-10 0 10]
 MF4='G_LEVE_DER':'trimf',[45 60 75]
 MF5='G_FUERTE_DER':'trapmf',[61.5 73.5 90 90]
-MF6='prueba':'trimf',[89 90 91]
+MF6='full izq':'trimf',[89 90 91]
 
 [Output2]
 Name='linear_vel_kmh'
