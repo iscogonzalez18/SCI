@@ -2,9 +2,9 @@
 Name='parte1'
 Type='mamdani'
 Version=2.0
-NumInputs=5
+NumInputs=12
 NumOutputs=2
-NumRules=2
+NumRules=3
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -19,27 +19,70 @@ MF1='CERCA':'trapmf',[-1.872 -0.208 2 4]
 MF2='LEJOS':'trapmf',[2 4 7 8]
 
 [Input2]
+Name='sonar_1'
+Range=[0 5]
+NumMFs=1
+MF1='mf1':'trimf',[0 2.5 5]
+
+[Input3]
+Name='sonar_2'
+Range=[0 5]
+NumMFs=1
+MF1='mf1':'trimf',[0 2.5 5]
+
+[Input4]
+Name='sonar_3'
+Range=[0 5]
+NumMFs=1
+MF1='mf1':'trimf',[0 2.5 5]
+
+[Input5]
+Name='sonar_4'
+Range=[0 5]
+NumMFs=2
+MF1='MUY_CERCA':'trapmf',[0 0 0.3 0.4]
+MF2='LEJOS':'trapmf',[0.39 0.5 5 5]
+
+[Input6]
+Name='sonar_5'
+Range=[0 5]
+NumMFs=1
+MF1='mf1':'trimf',[0 2.5 5]
+
+[Input7]
+Name='sonar_6'
+Range=[0 5]
+NumMFs=1
+MF1='mf1':'trimf',[0 2.5 5]
+
+[Input8]
+Name='sonar_7'
+Range=[0 5]
+NumMFs=1
+MF1='mf1':'trimf',[0 2.5 5]
+
+[Input9]
 Name='sonar_8'
 Range=[0 5]
 NumMFs=2
 MF1='CERCA':'trapmf',[-1.87 -0.208 1.25 5]
 MF2='LEJOS':'trapmf',[1.25 5 7 8]
 
-[Input3]
+[Input10]
 Name='sonar_9'
 Range=[0 5]
 NumMFs=2
 MF1='CERCA':'trapmf',[-1.4 -0.208 2 5]
 MF2='LEJOS':'trapmf',[2 5 7 8]
 
-[Input4]
+[Input11]
 Name='sonar_10'
 Range=[0 5]
 NumMFs=2
-MF1='CERCA':'trapmf',[-1.70738 -0.0403755 1.6 2]
-MF2='LEJOS':'trapmf',[1.94683908045977 3.61383908045977 5.102969348659 5.69683908045977]
+MF1='CERCA':'trapmf',[-1.70738 -0.0403755 1.35 1.75]
+MF2='LEJOS':'trapmf',[1.74 2.35 5 5]
 
-[Input5]
+[Input12]
 Name='sonar_11'
 Range=[0 5]
 NumMFs=2
@@ -49,13 +92,10 @@ MF2='LEJOS':'trapmf',[2 4 7 8]
 [Output1]
 Name='steering_wheel'
 Range=[-91 91]
-NumMFs=6
-MF1='G_FUERTE_IZQ':'trapmf',[-92.0752427184466 -92.0752427184466 -73.5 -61.5]
-MF2='G_LEVE_IZQ':'trimf',[-75 -60 -45]
-MF3='RECTO':'trimf',[-10 0 10]
-MF4='G_LEVE_DER':'trimf',[45 60 75]
-MF5='G_FUERTE_DER':'trapmf',[61.5 73.5 90 90]
-MF6='full izq':'trimf',[89 90 91]
+NumMFs=3
+MF1='RECTO':'trimf',[-10 0 10]
+MF2='FULL IZQ':'trimf',[89 90 91]
+MF3='IZQ':'trimf',[40 45 50]
 
 [Output2]
 Name='linear_vel_kmh'
@@ -65,5 +105,6 @@ MF1='LENTA':'trimf',[-9.8043893129771 -4.7662213740458 -0.644083969465651]
 MF2='PARADA':'trimf',[-1 0 0]
 
 [Rules]
-0 0 0 1 0, 3 2 (1) : 1
-0 0 0 2 0, 6 2 (1) : 1
+0 0 0 0 0 0 0 0 0 0 1 0, 1 2 (1) : 1
+0 0 0 0 2 0 0 0 0 0 2 0, 2 2 (1) : 1
+0 0 0 0 1 0 0 0 0 0 2 0, 1 2 (1) : 1
