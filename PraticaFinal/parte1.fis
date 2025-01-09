@@ -4,7 +4,7 @@ Type='mamdani'
 Version=2.0
 NumInputs=12
 NumOutputs=2
-NumRules=8
+NumRules=12
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -15,8 +15,8 @@ DefuzzMethod='centroid'
 Name='sonar_0'
 Range=[0 5]
 NumMFs=2
-MF1='CERCA':'trapmf',[-1.872 -0.208 2 4]
-MF2='LEJOS':'trapmf',[2 4 7 8]
+MF1='CERCA':'trapmf',[-1.872 -0.208 0.4 0.55]
+MF2='LEJOS':'trapmf',[0.54 0.7 5 5]
 
 [Input2]
 Name='sonar_1'
@@ -27,16 +27,18 @@ MF1='mf1':'trimf',[0 2.5 5]
 [Input3]
 Name='sonar_2'
 Range=[0 5]
-NumMFs=2
-MF1='CERCA':'trapmf',[0 0 1.7 2.01]
-MF2='MEDIANA':'trapmf',[2 2.2 5 5]
+NumMFs=3
+MF1='CERCA':'trapmf',[0 0 1.7 2.11]
+MF2='MEDIANA':'trapmf',[2.1 2.3 3.3 3.5]
+MF3='GRANDE':'trapmf',[3.49 3.7 5 5]
 
 [Input4]
 Name='sonar_3'
 Range=[0 5]
-NumMFs=2
-MF1='CERCA':'trapmf',[0 0 1.7 2.01]
-MF2='MEDIANA':'trapmf',[2 2.2 5 5]
+NumMFs=3
+MF1='CERCA':'trapmf',[0 0 1.7 2.11]
+MF2='MEDIANA':'trapmf',[2.1 2.3 3.3 3.5]
+MF3='GRANDE':'trapmf',[3.49 3.7 5 5]
 
 [Input5]
 Name='sonar_4'
@@ -88,16 +90,16 @@ MF3='MEDIANA':'trapmf',[0.99 1.1 3.3 3.41]
 Name='sonar_10'
 Range=[0 5]
 NumMFs=2
-MF1='CERCA':'trapmf',[-1.70738 -0.0403755 1.35 1.65]
-MF2='LEJOS':'trapmf',[1.65 2.35 5 5]
+MF1='CERCA':'trapmf',[-1.70738 -0.0403755 1.35 1.66]
+MF2='LEJOS':'trapmf',[1.65 1.85 5 5]
 
 [Input12]
 Name='sonar_11'
 Range=[0 5]
 NumMFs=4
-MF1='CERCA':'trimf',[0 0.44 0.88]
+MF1='CERCA':'trimf',[0 0.46 0.91]
 MF2='LEJOS':'trapmf',[1.24 1.5 5 5]
-MF3='CASI_IDEAL':'trimf',[0.87 0.95 1.03]
+MF3='CASI_IDEAL':'trimf',[0.9 0.95 1.03]
 MF4='IDEAL':'trimf',[1.029 1.05 1.25]
 
 [Output1]
@@ -119,11 +121,15 @@ MF1='LENTA':'trimf',[-3.96429 -2.21429 0]
 MF2='PARADA':'trimf',[-1 0 0]
 
 [Rules]
-0 0 1 0 0 0 0 0 2 0 1 0, 1 1 (1) : 1
-0 0 2 0 0 0 0 0 2 0 1 0, 4 1 (1) : 1
+2 0 0 1 0 0 0 0 2 0 1 0, 1 1 (1) : 1
+2 0 0 2 0 0 0 0 2 0 1 0, 4 1 (1) : 1
 0 0 0 0 2 0 0 0 0 0 2 0, 2 2 (1) : 1
 0 0 0 0 3 0 0 0 0 0 2 0, 3 2 (1) : 1
 0 0 0 0 1 0 0 0 0 0 2 0, 1 2 (1) : 1
 0 0 0 0 0 0 0 0 3 0 1 1, 5 2 (1) : 1
-0 0 0 0 0 0 0 0 3 3 0 3, 6 2 (1) : 1
+0 0 0 0 0 0 0 0 3 0 1 3, 6 2 (1) : 1
 0 0 0 0 0 0 0 0 3 3 0 4, 1 2 (1) : 1
+1 0 0 1 0 0 0 0 2 0 1 0, 1 1 (1) : 1
+1 0 0 3 0 0 0 0 2 0 1 0, 4 1 (1) : 1
+1 0 0 2 0 0 0 0 2 0 1 0, 1 1 (1) : 1
+2 0 0 3 0 0 0 0 2 0 1 0, 4 1 (1) : 1
