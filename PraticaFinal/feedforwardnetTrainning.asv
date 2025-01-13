@@ -1,0 +1,41 @@
+%% Carga de los datos
+%Se cargan los datos recopilados mediante maniobras realizadas manualmente
+datos1 = load("./datos_entrenamiento1");
+datos2 = load("./datos_entrenamiento2");
+datos3 = load("./datos_entrenamiento3");
+datos4 = load("./datos_entrenamiento4");
+datos5 = load("./datos_entrenamiento5");
+datos6 = load("./datos_entrenamiento6");
+
+datos = [
+ datos1.training_data;
+ datos2.training_data;
+ datos3.training_data; 
+ datos4.training_data; 
+ datos5.training_data; 
+ datos6.training_data; 
+ ];
+
+% Transposición
+inputs = datos(:, 1:12)';
+outputs = datos(:, 18:19)';
+
+inputs(isinf(inputs)) = 5.0;
+
+
+inputs = double(inputs);
+outputs = double(outputs);
+
+% Creación de red
+neuronas_capa1 = 7;
+neuronas_capa2 = 2;
+
+net = feedforwardnet([neuronas_capa1, neuronas_capa2]);
+
+% Entrenamiento
+net = configure(net,inputs,outputs);
+net = train(net,inputs,outputs);
+
+% Generar bloque simulink
+Ts = 0.1;
+gensim(net, Ts)
