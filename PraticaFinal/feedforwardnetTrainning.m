@@ -1,7 +1,7 @@
 
 datos = [];
 
-for i = 1:80
+for i = 1:68
     % Construcción del nombre del archivo
     filename = sprintf('./prueba/datos%d', i);
     
@@ -24,8 +24,8 @@ inputs = double(inputs);
 outputs = double(outputs);
 
 % Creación de la red neuronal feedforward
-neuronas_capa1 = 16;
-neuronas_capa2 = 9;
+neuronas_capa1 = 15;
+neuronas_capa2 = 7;
 
 net = feedforwardnet([neuronas_capa1, neuronas_capa2]);
 

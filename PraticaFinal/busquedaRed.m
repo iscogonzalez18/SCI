@@ -1,7 +1,7 @@
 %% 1. Cargar datos
 
 datos = [];
-numSimulaciones = 80;
+numSimulaciones = 68;
 
 for i = 1:numSimulaciones
     % Construir el nombre del archivo
