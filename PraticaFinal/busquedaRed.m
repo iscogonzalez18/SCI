@@ -1,7 +1,7 @@
 %% 1. Cargar datos de 68 simulaciones
 
 datos = [];
-numSimulaciones = 68;
+numSimulaciones = 80;
 
 for i = 1:numSimulaciones
     % Construir el nombre del archivo (p.ej.: "./datos_neuronal/datos1", "./datos_neuronal/datos2", ...)

@@ -1,7 +1,7 @@
 % Preallocate the cell array for efficiency
 datos = [];
 
-for i = 1:68
+for i = 1:80
     % Construct the filename
     filename = sprintf('./prueba/datos%d', i);
     
@@ -26,7 +26,7 @@ outputs = double(outputs);
 
 % Creación de la red neuronal feedforward
 neuronas_capa1 = 15;
-neuronas_capa2 = 8;
+neuronas_capa2 = 7;
 
 
 

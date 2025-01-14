@@ -69,8 +69,8 @@ training_data=[];
 
 distancia=3.23
 
-vel_lineal_ackerman_kmh = -1.8     %(km/h)
-steering_wheel_angle =  2.5       % desde -90 a 90 grados.
+vel_lineal_ackerman_kmh = -2.5     %(km/h)
+steering_wheel_angle =  1       % desde -90 a 90 grados.
 
 avanzar_ackerman
 
@@ -78,37 +78,68 @@ avanzar_ackerman
 
 distancia=3.23
 
-vel_lineal_ackerman_kmh = -1.8     %(km/h)
-steering_wheel_angle =  -2.5       % desde -90 a 90 grados.
+vel_lineal_ackerman_kmh = -2.5     %(km/h)
+steering_wheel_angle =  -1       % desde -90 a 90 grados.
 
 avanzar_ackerman
 
-% AVANCE PRIMERO DESPUES DE VERTICE
+% AVANCE 3
 
 distancia=0.3
 
-vel_lineal_ackerman_kmh = -1     %(km/h)
+vel_lineal_ackerman_kmh = -0.5     %(km/h)
 steering_wheel_angle =  0       % desde -90 a 90 grados.
 
 avanzar_ackerman
 
-% AVANCE 3
+% AVANCE
 
-distancia=2.82
+distancia=1.45
 
-vel_lineal_ackerman_kmh = -0.5     %(km/h)
+vel_lineal_ackerman_kmh = -0.7     %(km/h)
 steering_wheel_angle =  90       % desde -90 a 90 grados.
 
 avanzar_ackerman
 
-% AVANCE 3
+% AVANCE 4
 
-distancia= 4
+distancia=0.2
 
-vel_lineal_ackerman_kmh = -3     %(km/h)
+vel_lineal_ackerman_kmh = -0.5     %(km/h)
+steering_wheel_angle =  0       % desde -90 a 90 grados.
+
+avanzar_ackerman
+
+% AVANCE 4
+
+distancia=1.7
+
+vel_lineal_ackerman_kmh = -0.7     %(km/h)
+steering_wheel_angle =  90       % desde -90 a 90 grados.
+
+avanzar_ackerman
+
+% AVANCE 5
+
+distancia= 1
+
+vel_lineal_ackerman_kmh = -1.5     %(km/h)
+steering_wheel_angle =  -20     % desde -90 a 90 grados.
+
+distancia= 1
+
+vel_lineal_ackerman_kmh = -1.5     %(km/h)
+steering_wheel_angle =  20     % desde -90 a 90 grados.
+
+avanzar_ackerman
+
+
+distancia= 3
+
+vel_lineal_ackerman_kmh = -2     %(km/h)
 steering_wheel_angle =  0     % desde -90 a 90 grados.
 
 avanzar_ackerman
 
 
-save ./prueba/datos80 training_data
+save ./prueba/datos81 training_data
