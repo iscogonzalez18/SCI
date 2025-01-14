@@ -91,13 +91,12 @@ for n1 = rangoCapa1
     for n2 = rangoCapa2
         
         contador = contador + 1;
-        fprintf('Entrenando red %d - Arquitectura: [%d, %d]\n', ...
-            contador, n1, n2);
+        fprintf('Entrenando red %d - Arquitectura: [%d, %d]\n', contador, n1, n2);
         
         % Crear la red con 2 capas ocultas
         net = feedforwardnet([n1 n2]);
         
-        % Configuración de la división
+        % Configuramos la división para que use EXACTAMENTE nuestros índices
         net.divideFcn = 'divideind';
         net.divideParam.trainInd = idxTrain;
         net.divideParam.valInd   = idxVal;

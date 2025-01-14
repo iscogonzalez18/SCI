@@ -1,15 +1,14 @@
-% Preallocate the cell array for efficiency
+
 datos = [];
 
 for i = 1:80
-    % Construct the filename
+    % Construcción del nombre del archivo
     filename = sprintf('./prueba/datos%d', i);
     
-    % Load the data
+    % Carga de datos
     loaded_data = load(filename);
     
-    % Assume that each file contains a variable named 'training_data'
-    % Concatenate all training data vertically
+    % Concatenación vertical
     datos = [datos; loaded_data.training_data];
 end
 
@@ -25,10 +24,8 @@ inputs = double(inputs);
 outputs = double(outputs);
 
 % Creación de la red neuronal feedforward
-neuronas_capa1 = 15;
-neuronas_capa2 = 7;
-
-
+neuronas_capa1 = 16;
+neuronas_capa2 = 9;
 
 net = feedforwardnet([neuronas_capa1, neuronas_capa2]);
 
@@ -39,3 +36,6 @@ net = train(net, inputs, outputs);
 % Generación de un bloque Simulink
 Ts = 0.1;
 gensim(net, Ts);
+
+
+
