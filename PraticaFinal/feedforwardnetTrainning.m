@@ -1,9 +1,9 @@
 % Preallocate the cell array for efficiency
 datos = [];
 
-for i = 1:10
+for i = 1:68
     % Construct the filename
-    filename = sprintf('./datos3/datos%d', i);
+    filename = sprintf('./prueba/datos%d', i);
     
     % Load the data
     loaded_data = load(filename);
@@ -25,12 +25,12 @@ inputs = double(inputs);
 outputs = double(outputs);
 
 % Creación de la red neuronal feedforward
-neuronas_capa1 = 12;
-neuronas_capa2 = 6;
-neuronas_capa3 = 4;
+neuronas_capa1 = 15;
+neuronas_capa2 = 8;
 
 
-net = feedforwardnet([neuronas_capa1,neuronas_capa2,neuronas_capa3]);
+
+net = feedforwardnet([neuronas_capa1, neuronas_capa2]);
 
 % Configuración y entrenamiento de la red
 net = configure(net, inputs, outputs);
